@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package credit_scoring;
+
+// The credit_scoring service definition.
+service credit_scoringService {
+  // Define RPC methods here
+  rpc SampleMethod (SampleRequest) returns (SampleResponse);
+}
+
+// The request message containing the user's name.
+message SampleRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message SampleResponse {
+  string message = 1;
+}

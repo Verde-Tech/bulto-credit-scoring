@@ -1,0 +1,15 @@
+[package]
+name = "credit_scoring"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+env_logger = "0.11.0"
+log = "0.4.20"
+tonic = "0.10"
+prost = "0.12"
+prost-types = "0.12"
+tokio = { version = "1", features = ["full"] }
+
+[build-dependencies]
+tonic_build = "0.10"
