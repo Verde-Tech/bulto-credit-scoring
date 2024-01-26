@@ -1,18 +1,17 @@
-use log::info;
-use stubs::{stub_comprehensive_credit_score, stub_alternative_credit_report, stub_traditional_credit_report};
 use tonic::{transport::Server, Request, Response, Status};
-use crate::models::{ComprehensiveCreditScore, TraditionalCreditReport, AlternativeCreditReport};
-
 
 use credit_scoring::{credit_scoring_service_server::{CreditScoringService, CreditScoringServiceServer}, CalculateCreditScoreRequest, CalculateCreditScoreResponse, ScoreType};
-// use credit_scoring::::{credit_scoring_server::{CreditScoring, CreditScoringServer}, CalculateCreditScoreRequest, CalculateCreditScoreResponse, ScoreType};
-use score::{calculate_comprehensive_score, calculate_traditional_score, calculate_alternative_score};
+
+pub use score::{calculate_comprehensive_score, calculate_traditional_score, calculate_alternative_score};
+pub use stubs::{stub_comprehensive_credit_score, stub_alternative_credit_report, stub_traditional_credit_report};
+pub use models::{ComprehensiveCreditScore, TraditionalCreditReport, AlternativeCreditReport};
 
 mod stubs;
 mod score;
 mod models;
+
 pub mod credit_scoring {
-    tonic::include_proto!("credit_scoring"); // The string specified here must match the proto package name
+    tonic::include_proto!("credit_scoring");
 }
 
 #[derive(Default)]
