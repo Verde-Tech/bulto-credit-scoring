@@ -17,10 +17,8 @@ service credit_scoringService {
 message CalculateCreditScoreRequest {
   // User's credit information fields go here
   // For example:
-  int32 age = 1;
-  int32 numberOfOpenAccounts = 2;
-  int32 totalDebt = 3;
-  int32 historyLength = 4;
+message CalculateCreditScoreRequest {
+  string user_identifier = 1;
   // Type of credit score to calculate
   ScoreType score_type = 5;
 }
