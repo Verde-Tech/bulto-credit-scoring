@@ -1,6 +1,6 @@
-use super::*;
+use crate::models::reports::*;
 
-fn calculate_comprehensive_credit_score(comprehensive_score: &ComprehensiveCreditScore) -> f64 {
+pub fn calculate_comprehensive_credit_score(comprehensive_score: &ComprehensiveCreditScore) -> f64 {
     let weight_traditional = 0.6;
     let weight_alternative = 0.4;
 
@@ -12,7 +12,7 @@ fn calculate_comprehensive_credit_score(comprehensive_score: &ComprehensiveCredi
     normalize_scale_score(combined_score)
 }
 
-fn calculate_traditional_score(credit_report: &TraditionalCreditReport) -> f64 {
+pub fn calculate_traditional_score(credit_report: &TraditionalCreditReport) -> f64 {
     let weight_payment_history = 0.35;
     let weight_credit_utilization = 0.30;
     let weight_credit_history = 0.15;
@@ -35,7 +35,7 @@ fn calculate_traditional_score(credit_report: &TraditionalCreditReport) -> f64 {
     (score_total_debts * weight_total_debts)
 }
 
-fn calculate_alternative_score(alternative_score: &AlternativeCreditReport) -> f64 {
+pub fn calculate_alternative_score(alternative_score: &AlternativeCreditReport) -> f64 {
     let weight_utility_payments = 0.20;
     let weight_rent_payments = 0.15;
     let weight_telecom_payments = 0.15;
