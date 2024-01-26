@@ -109,66 +109,115 @@ pub fn calculate_comprehensive_credit_score() -> ComprehensiveCreditScore {
 }
 
 pub fn calculate_payment_history() -> PaymentHistory {
-    // Stub implementation
-    unimplemented!();
+    PaymentHistory {
+        late_payments: 0,
+        on_time_payments: 0,
+        missed_payments: 0,
+    }
 }
 
 pub fn calculate_credit_utilization() -> CreditUtilization {
-    // Stub implementation
-    unimplemented!();
+    CreditUtilization {
+        total_balance: 0.0,
+        available_credit: 0.0,
+    }
 }
 
 pub fn calculate_credit_history() -> CreditHistory {
-    // Stub implementation
-    unimplemented!();
+    CreditHistory {
+        oldest_account_age: 0,
+        average_account_age: 0.0,
+    }
 }
 
 pub fn calculate_credit_account_types() -> Vec<CreditAccountType> {
-    // Stub implementation
-    unimplemented!();
+    vec![]
 }
 
 pub fn calculate_public_records() -> PublicRecords {
-    // Stub implementation
-    unimplemented!();
+    PublicRecords {
+        bankruptcies: 0,
+        foreclosures: 0,
+        legal_judgments: 0,
+        tax_liens: 0,
+    }
 }
 
 pub fn calculate_utility_payments() -> UtilityPayments {
-    // Stub implementation
-    unimplemented!();
+    UtilityPayments {
+        electric: PaymentHistory {
+            late_payments: 0,
+            on_time_payments: 0,
+            missed_payments: 0,
+        },
+        water: PaymentHistory {
+            late_payments: 0,
+            on_time_payments: 0,
+            missed_payments: 0,
+        },
+        internet: PaymentHistory {
+            late_payments: 0,
+            on_time_payments: 0,
+            missed_payments: 0,
+        },
+    }
 }
 
 pub fn calculate_telecom_payments() -> TelecomPayments {
-    // Stub implementation
-    unimplemented!();
+    TelecomPayments {
+        mobile: PaymentHistory {
+            late_payments: 0,
+            on_time_payments: 0,
+            missed_payments: 0,
+        },
+        landline: PaymentHistory {
+            late_payments: 0,
+            on_time_payments: 0,
+            missed_payments: 0,
+        },
+    }
 }
 
 pub fn calculate_employment_history() -> EmploymentHistory {
-    // Stub implementation
-    unimplemented!();
+    EmploymentHistory {
+        current_employer: EmploymentStatus::Other,
+        employment_duration: 0,
+    }
 }
 
 pub fn calculate_educational_background() -> EducationalBackground {
-    // Stub implementation
-    unimplemented!();
+    EducationalBackground {
+        highest_level: EducationLevel::Other,
+        field_of_study: EmploymentStatus::Other,
+    }
 }
 
 pub fn calculate_social_media_activity() -> SocialMediaActivity {
-    // Stub implementation
-    unimplemented!();
+    SocialMediaActivity {
+        activity_level: 0,
+    }
 }
 
 pub fn calculate_e_commerce_transactions() -> ECommerceTransactions {
-    // Stub implementation
-    unimplemented!();
+    ECommerceTransactions {
+        frequency: 0,
+        diversity: 0,
+    }
 }
 
 pub fn calculate_bank_account_info() -> BankAccountInfo {
-    // Stub implementation
-    unimplemented!();
+    BankAccountInfo {
+        average_balance: 0.0,
+        overdraft_history: 0,
+    }
 }
 
 pub fn calculate_mobile_money_data() -> MobileMoneyData {
-    // Stub implementation
-    unimplemented!();
+    MobileMoneyData {
+        transaction_history: vec![],
+        account_balance: 0.0,
+        account_duration: 0,
+        transaction_frequency: TransactionFrequency::VeryLow,
+        transaction_partners: vec![],
+    }
 }
