@@ -1,6 +1,6 @@
-use crate::models::reports::*;
+use crate::models::*;
 
-pub fn calculate_comprehensive_credit_score(comprehensive_score: &ComprehensiveCreditScore) -> f64 {
+pub fn calculate_comprehensive_score(comprehensive_score: &ComprehensiveCreditScore) -> f64 {
     let weight_traditional = 0.6;
     let weight_alternative = 0.4;
 

@@ -1,4 +1,4 @@
-use crate::models::reports::*;
+use crate::models::*;
 
 pub fn stub_traditional_credit_report() -> TraditionalCreditReport {
     TraditionalCreditReport {

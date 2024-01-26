@@ -5,18 +5,10 @@ package credit_scoring;
 // The credit_scoring service definition.
 service credit_scoringService {
   // Calculate a user's credit score
-  rpc CalculateCreditScore (CalculateCreditScoreRequest) returns (CalculateCreditScoreResponse) {
-    option (google.api.http) = {
-      post: "/v1/credit_score"
-      body: "*"
-    };
-  };
+  rpc CalculateCreditScore (CalculateCreditScoreRequest) returns (CalculateCreditScoreResponse);
 }
 
 // The request message containing the user's credit information.
-message CalculateCreditScoreRequest {
-  // User's credit information fields go here
-  // For example:
 message CalculateCreditScoreRequest {
   string user_identifier = 1;
   // Type of credit score to calculate
