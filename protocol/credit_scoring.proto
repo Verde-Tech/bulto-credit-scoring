@@ -5,7 +5,12 @@ package credit_scoring;
 // The credit_scoring service definition.
 service credit_scoringService {
   // Calculate a user's credit score
-  rpc CalculateCreditScore (CalculateCreditScoreRequest) returns (CalculateCreditScoreResponse);
+  rpc CalculateCreditScore (CalculateCreditScoreRequest) returns (CalculateCreditScoreResponse) {
+    option (google.api.http) = {
+      post: "/v1/credit_score"
+      body: "*"
+    };
+  };
 }
 
 // The request message containing the user's credit information.
@@ -16,6 +21,15 @@ message CalculateCreditScoreRequest {
   int32 numberOfOpenAccounts = 2;
   int32 totalDebt = 3;
   int32 historyLength = 4;
+  // Type of credit score to calculate
+  ScoreType score_type = 5;
+}
+
+// Enumeration for the type of credit score
+enum ScoreType {
+  TRADITIONAL = 0;
+  COMPREHENSIVE = 1;
+  ALTERNATIVE = 2;
 }
 
 // The response message containing the user's credit score.
