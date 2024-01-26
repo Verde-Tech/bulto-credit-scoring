@@ -4,16 +4,22 @@ package credit_scoring;
 
 // The credit_scoring service definition.
 service credit_scoringService {
-  // Define RPC methods here
-  rpc SampleMethod (SampleRequest) returns (SampleResponse);
+  // Calculate a user's credit score
+  rpc CalculateCreditScore (CalculateCreditScoreRequest) returns (CalculateCreditScoreResponse);
 }
 
-// The request message containing the user's name.
-message SampleRequest {
-  string name = 1;
+// The request message containing the user's credit information.
+message CalculateCreditScoreRequest {
+  // User's credit information fields go here
+  // For example:
+  int32 age = 1;
+  int32 numberOfOpenAccounts = 2;
+  int32 totalDebt = 3;
+  int32 historyLength = 4;
 }
 
-// The response message containing the greetings
-message SampleResponse {
-  string message = 1;
+// The response message containing the user's credit score.
+message CalculateCreditScoreResponse {
+  // The calculated credit score
+  int32 score = 1;
 }
